@@ -1,0 +1,103 @@
+---
+number-offset: 0
+crossref:
+  exr-title: "Exercise W1."
+  fig-title: "Figure W1."
+  fig-prefix: "Fig W1."
+  tbl-title: "Table W1."
+---
+
+# QR-A Week 1 assignment
+
+```{r include=FALSE}
+source("_start-up.R")
+```
+
+{{< include _devoirs.qmd >}}
+
+
+
+
+## Drill
+
+::: {.callout-note collapse=true}
+## Chap 1: Models
+
+
+:::
+
+::: {.callout-note collapse=true}
+### Chap 2: Quantities
+
+
+:::
+
+
+----------------------------
+
+## Definitions
+
+::: {.callout-note collapse=true}
+## Chap 1: Models
+
+System
+
+Quantity, Variable, and Operationalization
+
+Model & Purpose & Representation
+
+Constant
+
+
+:::
+
+::: {.callout-note collapse=true}
+## Chap 2: Quantities
+
+
+
+Per
+
+Space
+
+Dimension: Base and derived
+
+Units: Base and derived
+
+Incommensurate
+
+Conversion factor & Flavors of one
+
+Dimensionless
+
+Capita
+
+Analysis
+
+:::
+
+
+--------------------
+
+## Exercises
+
+::: {.callout-note collapse=true}
+## Chap 1: Models
+
+{{< include ../QR-A/_exercises/hamster-hurt-lamp.qmd >}}
+
+
+{{< include ../QR-A/_exercises/pig-forgive-saw.qmd >}}
+
+
+{{< include ../QR-A/_exercises/panda-spend-pen.qmd >}}
+
+
+:::
+
+::: {.callout-note collapse=true}
+## Chap 2: Quantities and what else
+
+Is there something here?
+
+:::

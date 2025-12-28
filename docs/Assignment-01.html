@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>UATX Quantitative Reasoning - Analysis – QR - Analysis at UATX</title>
+<title>assignment-01 – QR - Analysis at UATX</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -106,7 +106,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">UATX Quantitative Reasoning - Analysis</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -242,50 +242,378 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#qr-a-week-1-assignment" id="toc-qr-a-week-1-assignment" class="nav-link active" data-scroll-target="#qr-a-week-1-assignment">QR-A Week 1 assignment</a>
+  <ul class="collapse">
+  <li><a href="#drill" id="toc-drill" class="nav-link" data-scroll-target="#drill">Drill</a></li>
+  <li><a href="#definitions" id="toc-definitions" class="nav-link" data-scroll-target="#definitions">Definitions</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">UATX Quantitative Reasoning - Analysis</h1>
+
+
+
+<section id="qr-a-week-1-assignment" class="level1">
+<h1>QR-A Week 1 assignment</h1>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Remember to hand in your work …
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Submitting answers</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Clearing document memory</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p>At any point, you can submit your answers by collecting them and uploading them to the class site.</p>
+<p><span id="devoirs-docID" style="display: none;">Assignment-01.rmarkdown</span> <span><button onclick="devoirsSubmit()">Collect your answers</button></span> <span id="devoirs_summary">No answers yet collected</span></p>
+<div class="cell">
+<div class="cell-output-display">
+<script type="text/javascript">
+ console.log("In devoirs.js")
 
+function devoirsCollectEssays() {
+  var essay_answers = [];
+  var items = document.getElementsByClassName("devoirs-text");
+  for (i = 0; i < items.length; i++) {
+    //console.log("text entry" + i + "being handled");
+    essay_answers[i] = {itemid: items[i].id, contents: items[i].value}
+  }
 
+  return essay_answers;
+}
 
-<div class="quarto-title-meta">
+function devoirsGetDocID() {
+  return document.getElementById("devoirs-docID").innerHTML
+}
 
-    
-  
-    
-  </div>
-  
+function devoirsCollectMC() {
+    let mc_answers = [] // Hold the information
+    var ele = document.getElementsByClassName("devoirs-mcq");
+    var count = 0;
+    for (i = 0; i < ele.length; i++) {
+        if (ele[i].checked) {
+          //console.log("Entering conditional.");
+          let checked_one = ele[i];
+          mc_answers[count++] = {itemid: checked_one.id, w: checked_one.getAttribute("w"), contents: checked_one.text};
+        }
+    }
+    return mc_answers;
+}
 
+console.log("About to define WebR")
 
-</header>
+function devoirsCollectWebR() {
+  var chunk_contents = []; // placeholder for collecting webr items
+  if (typeof qwebrCellDetails == "undefined") {
+    // There aren't any webr chunks
+    return chunk_contents;
+  }
+  var chunks = qwebrCellDetails;
+  for (i = 0; i < chunks.length; i++) {
+    chunk_contents[i] = {itemid: chunks[i].options["label"], contents: chunks[i].code};
+  }
 
+  return chunk_contents;
+}
 
-<p>This page is oriented primarily to students registered in the course at the University of Austin, but visitors are welcome. General information for visitors is available <em>via</em> the <a href="./about.html">About page</a>.</p>
-<p>A typical class week consists of one or two of the topics listed sequentially below and includes textbook readings, homework exercises, self-study drill questions, and a short weekly quiz.</p>
-<p>Topics:</p>
+console.log("About to define devoirsSubmit")
+
+function devoirsSubmit() {
+  console.log("About to collect history")
+
+  // check if there is any sign of a webr entry
+  // If not, don't try to collect webr entries
+  if (typeof qwebrRCommandHistory === 'undefined') {
+    items = {docid: devoirsGetDocID(), MC: devoirsCollectMC(), Essays: devoirsCollectEssays(), WebR: {}, R: {}}
+  } else {
+    console.log("Getting R commands.")
+    var Rhistory = qwebrRCommandHistory.map((x) => x.replace(/Ran code in (.*) at (.*[AP]M).{5}(.*)/, "[chunk: $1, time: $2, code: $3]"))
+
+    items = {docid: devoirsGetDocID(), MC: devoirsCollectMC(), Essays: devoirsCollectEssays()} //, WebR: devoirsCollectWebR(), R: Rhistory}
+  }
+
+  navigator.clipboard.writeText(JSON.stringify(items));
+
+  // summarize what's being collected
+  var my_summary = "Answers copied to clipboard. Fixed choice: " + items.MC.length + " Essays: " + items.Essays.length + " WebR chunks: " + items.WebR.length
+
+  document.getElementById("devoirs_summary").innerHTML = my_summary;
+}
+
+console.log("Read devoirsSubmit()")
+
+// Hint handling in Multiple choice
+
+// Still have to add an on/off switch from options
+
+function devoirs_setup_hintarea() {
+  answers = document.getElementsByClassName("devoirs-mcq")
+  for (i=0; i<answers.length; i++) answers[i].addEventListener('click', function(e){document.getElementById(e.target.name + "-hintarea").innerHTML = e.target.getAttribute("hint")})
+}
+
+ window.addEventListener("load", function() {
+  answers = document.getElementsByClassName("devoirs-mcq")
+  for (i=0; i<answers.length; i++) {
+    if (answers[i].getAttribute("show_hints") == "TRUE") {
+        answers[i].addEventListener('click', function(e){
+          console.log("inserting hint")
+        document.getElementById(e.target.name + "-hintarea").innerText = e.target.getAttribute("hint")
+      })
+
+    }
+  }
+})
+
+console.log("Added hint summary.") 
+</script>
+
+</div>
+</div>
+<p><a href="https://docs.google.com/forms/d/e/1FAIpQLSfh2aEmMwgBA__bl_uTYZl9NjUTLBhzC25qEYHSnwXXWhDqoQ/viewform?usp=header" target="_blank">Link to upload site</a></p>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+If the answers that have been loaded automatically are not yours, press this button before starting your work:
+<script type="text/javascript">
+      // clear the local storage
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('btnClearStorage');
+      form.addEventListener("click", function () {
+        localStorage.clear();
+        location.reload();
+        console.log("Clearing memory");
+      }, false);
+    }
+    )
+    </script>
+<button id="btnClearStorage">
+Clear memory
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section id="drill" class="level2">
+<h2 class="anchored" data-anchor-id="drill">Drill</h2>
+<div class="callout callout-style-default callout-note callout-empty-content callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Chap 1: Models
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-empty-content callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Chap 2: Quantities
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="definitions" class="level2">
+<h2 class="anchored" data-anchor-id="definitions">Definitions</h2>
+<div class="callout callout-style-default callout-note callout-empty-content callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Chap 1: Models
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-empty-content callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Chap 2: Quantities
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="exercises" class="level2">
+<h2 class="anchored" data-anchor-id="exercises">Exercises</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Chap 1: Models
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div id="exr-hamster-hurt-lamp" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise W1. 1</strong></span> Many people experience the symptoms of a housing shortage: splitting up apartments to accomodate roommate groups; financial stress due (in part) to high rents; deferring life decisions such as having children; living in deteriorating, aging buildings, and so on.</p>
+<p>We’re used to thinking about people in terms of lifespan, but it is also useful to think about buildings that way. City and local governments keep detailed information about the housing stock, largely for tax purposes. Services like &lt;zillow.com&gt; have data readily available to the public.</p>
+<p>Question: What about the houses listed on Zillow might presented a view biased to houses in better condition?</p>
+<p>A life-cycle assessment of a sample of US houses and apartments by <a href="../www/Impact of Lifetime on U.S. Residential Building LCA Results.pdf">Aktas and Bilic (2012)</a> produced the following graphic about how long houses and apartments remain habitable.</p>
+<div id="fig-building-lifetime" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-building-lifetime-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="www/residential-building-lifetime.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-building-lifetime-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure W1.&nbsp;1: “Lifetime distribution of residential buildings calculated from multiple American Housing Survey microdata,” from Aktas and Bilic 2012.
+</figcaption>
+</figure>
+</div>
+<p>Question: Is the graph consistent with the claim that 7% of US housing stock was built before 1920?</p>
+<p>Question: Speculate on what might account for the rightward shift of the curve over the ten year period considered. Consider these two hypotheses:</p>
 <ol type="i">
-<li>Modeling, the broad framework for quantitative reasoning</li>
-<li>Quantities and dimensions</li>
-<li>Rates and their uses</li>
-<li>Magnitudes for representing the very big along side the very small</li>
-<li>Function building blocks. Functions are the links between quantities in our models.</li>
-<li>Uncertain quantities. Functions also provide a way to represent uncertainty.</li>
-<li>Custom design of functions, to power the models we build</li>
-<li>Hypothesis and likelihood, to connect data to models and conclusion</li>
-<li>Bayesian reasoning, updating our beliefs based on evidence</li>
-<li>Dynamics, the study of systems that change in time</li>
-<li>Rates of change, a revolution in quantitative thinking</li>
-<li>Accumulation, the flip side of rates of change</li>
+<li>house building techniques have been improving. (When would they have had to improve to produce the curve shift?)</li>
+<li>the current housing shortage has resulted in buildings being used after the time that they would have been replaced were there no housing shortage?</li>
 </ol>
+<p>ANOTHER DATUM: “In the U.S., the typical depreciation rate for a residential apartment building is 3.636% per year. The IRS requires that the cost of the building (minus the value of the land) be depreciated over a period of 27.5 years using the straight-line method.” from AI</p>
+<p>I’M HEADING TOWARD a later exercise referring to Chapter 8 or 9 in *short introduction to demography which will ask students to outline their own design for a model that would enable us to construct an index of how successfully new housing suitable for different income levels is becoming available to accomodate growth and the retirement of old buildings.</p>
+</div>
+<p><!-- end of exr-hamster-hurt-lamp --></p>
+<div id="exr-pig-forgive-saw" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise W1. 2</strong></span> Consider this simple, made-up mortality table that might be representative of a bird species, e.g.&nbsp;robins.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Age</th>
+<th>Mortality</th>
+<th>Starting Population</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td></td>
+<td>1000</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>0.50</td>
+<td>500</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>0.50</td>
+<td>250</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>1.00</td>
+<td>125</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td></td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>Calculate the life expectancy for these birds. Give a number, but also explain you reasoning in words. (Hint: It’s not a long calculation.)</p>
+<script type="text/javascript">
+      //save entered info
+      document.addEventListener('DOMContentLoaded', function() {
+      console.log('Adding event listener for pfs-LE.');
+      const form = document.getElementById('pfs-LE');
+      form.addEventListener("input", function () {
+        var todo = document.getElementById('pfs-LE').value;
+        localStorage.setItem("pfs-LE-contents", todo);
+        console.log("Saving value of pfs-LE.")
+      }, false);
+
+      //on page load, read in the old value
+      const savedValue = localStorage.getItem("pfs-LE-contents");
+      if (savedValue) {
+        document.getElementById('pfs-LE').value = savedValue;
+      }
+})
+</script>
+<textarea id="pfs-LE" name="pfs-LE" class="devoirs-text" style="font-family: monospace, monospace;" rows="4" cols="50" placeholder="Type here. (ID pfs-LE)"></textarea>
+</div>
+<p><!-- end of exr-pig-forgive-saw --></p>
+<div id="exr-panda-spend-pen" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise W1. 3</strong></span> Short classroom discussion about the SIR model graphic including:</p>
+<ul>
+<li>a quick demonstration (narrated by the students) of the patterns seen for different settings of the parameters.</li>
+<li>speculate on how to operationalize “social distance.”</li>
+<li>reason why the isolation parameter only goes up to 50%: the behavior doesn’t change much for higher isolations. Explain that % for isolation means the fraction of the infectives who isolate or, equivalently, how much of the time infectives isolate.</li>
+</ul>
+</div>
+<p><!-- end of exr-panda-spend-pen --></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Chap 2: Quantities and what else
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Is there something here?</p>
+</div>
+</div>
+</div>
+<p>And something more?</p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
